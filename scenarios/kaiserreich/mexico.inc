@@ -14,15 +14,15 @@ policy = {
        interventionism = 6
    }
 
-headofstate = { type = 9 id = 36000  } 
+headofstate = { type = 9 id = 36000 }
 headofgovernment = { type = 9 id = 36001 }
-foreignminister = { type = 9 id = 36002 }  
+foreignminister = { type = 9 id = 36002 }
 armamentminister = { type = 9 id = 36003 }
-ministerofsecurity = { type = 9 id = 36004 }  
+ministerofsecurity = { type = 9 id = 36004 }
 ministerofintelligence = { type = 9 id = 36005 }
 chiefofstaff = { type = 9 id = 36006 }
-chiefofarmy = { type = 9 id = 36007 }
-chiefofnavy = { type = 9 id = 36008 }        
+chiefofarmy = { type = 9 id = 36186 }
+chiefofnavy = { type = 9 id = 36008 }
 chiefofair = { type = 9 id = 36009 }
 
 #### Resource Reserves
@@ -64,32 +64,41 @@ relation = { tag = USA value = -51 }
 techapps = {
 
 #Infantry
-1010  1020 1030 1040 1050 1060 1070 1080 1090 #Early Infantry Division
-1910 1920 1930 1940 1950 1960 #Interbellum Supply 
-1160  1170 1180 1190 1200 1210 1220 1230 1240 #Early Mountain Division  
-13060 13070 13080 1310 1320 1330 1340 1350 #1924 Cavalry Division  
-1830 1840 1850 #Engineers 
+1010 1020 1030 1040 1050 1060 1070 1080 1090 #Early Infantry Division
+1910 1920 1930 1940 1950 1960 #Interbellum Supply
+1160 1170 1180 1190 1200 1210 1220 #Early Mountain Division
+1560 #1922 Naval Infantry
+13060 13070 13080 1310 1320 1330 1340 1350 #1924 Cavalry Division
+1830 1840 1850 #Engineers
 
 #Armour & Artillery
 7600 7610 2620 2010 2630 # Tank
 2860 2870 2880 2020 #Basic Armoured Car
-2290 2300 2310 2900 #Great War Heavy Field Artillery 
-2800 2450 21180 21190 #Early Static Anti-Air Artillery 
-2810 2820 2510 #Basic Anti-Air Artillery Brigade 
+2290 2300 2310 2900 #Great War Heavy Field Artillery
+2800 2450 21180 21190 #Early Static Anti-Air Artillery
+2810 2820 2510 #Basic Anti-Air Artillery Brigade
 
 #Aircrafts
-4500 4510 4520 4530 4540 4550 4010 #Interwar Fighter  
-
-#Industrial
-5700 5710 5010 #Modern Agriculture 
-5310 54010 54020 54030 5316 5326 #Computers & cryptografi
-5810 5820 5050 #Manufactoring
-5800 5080 5090 #Improved Construction Engineering 
-5190 #Basic Oil Refining 
-5600 #Medicine
+4500 4510 4520 4530 4540 4550 4010 #Interwar Fighter
+4300 4310 4320 4330 #Multi Role Fighters
+4600 4610 4620 4630 4120 #Tac & CAS Bombers
+4700 #Naval Bombers
+4740 4750 4760 #Seaplanes
 
 #Naval
+3010 3020 3030 3040 3050 #DDs
+3110 3120 3130 3140 #Light Cruisers
 3810 #Troopships
+3900 #ASW Equipment
+3720 #Torpedoes
+
+#Industrial
+5700 5710 5010 #Modern Agriculture
+5310 54010 54020 54030 5316 5326 #Computers & cryptografi
+5810 5820 5050 #Manufactoring
+5800 5080 5090 #Improved Construction Engineering
+5190 #Basic Oil Refining
+5600 #Medicine
 
 # Land Doctrines WW1 - Entente (default)
 6500 6510 6530 6580 6600 6610 6620 6630 6640 6650 6660 6670 6680 6540 6910
@@ -99,6 +108,12 @@ techapps = {
 
 #Air Doctrines - ww2 techs
 27480 27490 27500 27510 27520 27530 27540 27550 27570 27580 27590 27600 9030 9020 27560 27460 27470 9010
+
+#Naval Doctrines - backwards & oriented towards coastal defense
+8010 8020 8050 8060 8070 8080
+8900 8910 8920 #Fleet-in-Being
+8100 8110 8120 #Base Protection
+82300 #Basic Amphibious Warfare
 }
 
 #########  OOB (...)
@@ -111,7 +126,7 @@ location = 1974
  id = { type = 29500 id = 3 }
  name = "I Division de Infanteria"
  strength = 100
- type = infantry
+ type = d_01
  model = 7
  }
 
@@ -119,7 +134,7 @@ location = 1974
  id = { type = 29500 id = 4 }
  name = "II Division de Infanteria"
  strength = 100
- type = infantry
+ type = d_01
  model = 7
  }
 
@@ -127,9 +142,8 @@ location = 1974
  id = { type = 29500 id = 5 }
  name = "III Division de Infanteria"
  strength = 100
- type = infantry
+ type = d_01
  model = 7
- extra = artillery
  }
  }
  
@@ -137,7 +151,7 @@ location = 1974
 id = { type = 29500 id = 31 }
 name = "Ejército Libertador del Sur"
 location = 1968
-leader = 4569
+leader = 4063
 
  division = {
  id = { type = 29500 id = 2 }
@@ -145,6 +159,7 @@ leader = 4569
  strength = 100
  type = infantry
  model = 8    #Special trained w. foreign eq.
+ extra = artillery
  }
 
 }
@@ -180,7 +195,7 @@ location = 1979
  id = { type = 29500 id = 14 }
  name = "IV Division de Infanteria"
  strength = 100
- type = infantry
+ type = d_01
  model = 7
  }
 
@@ -188,7 +203,7 @@ location = 1979
  id = { type = 29500 id = 15 }
  name = "V Division de Infanteria"
  strength = 100
- type = infantry
+ type = d_01
  model = 7
  }
  
@@ -198,7 +213,7 @@ location = 1979
 id = { type = 29500 id = 32 }
 name = "División del Norte"
 location = 1977
-leader = 4570
+leader = 4093
 
  division = {
  id = { type = 29500 id = 16 }
@@ -206,6 +221,7 @@ leader = 4570
  strength = 100
  type = infantry
  model = 7
+ extra = rocket_artillery
  }
 }
 
